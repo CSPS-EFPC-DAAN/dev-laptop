@@ -3,6 +3,5 @@
   - src: brentwg.azure-cli
   - src: ngetchell.vscode
   - src: geerlingguy.docker
-  - src: ocha.dotnet-core
-  - src: wtanaka.android_studio
   - src: andrewrothstein.terraform
+  - src: andrewrothstein.anaconda
