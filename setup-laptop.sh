@@ -23,24 +23,33 @@ while getopts "fes" opt; do
 done
 
 
-
 shift $((OPTIND-1))
 
 [ "${1:-}" = "--" ] && shift
 
-echo "Skip Ansible flag ${skipansible}"
-echo "Install extensions flag ${extensions}"
-echo "Force downloading Galaxy packages ${force}"
 
 if [ $skipansible = 0 ]; then
-  echo "Running Ansible Script"
+
+  if ! [ -x "command -v ansible" ]; then 
+    echo "Ansible not found installing..."
+
+    sudo apt-get update && 
+    sudo apt-get install software-properties-common -y &&
+    sudo apt-add-repository ppa:ansible/ansible -y &&
+    sudo apt-get update && 
+    sudo apt-get install ansible -y &&
+    ansible-playbook test.yml --connection=local
+  fi
+
   if [ $force = 1 ]; then
-    echo "Forcing install of ansible galaxy packages"
+    echo "Forcing install of Ansible Galaxy packages"
     sudo ansible-galaxy install -r ./requirements.yml --force
   else
+    echo "Installing missing Ansible Galaxy packages"
     sudo ansible-galaxy install -r ./requirements.yml
   fi
 
+  echo "Running Ansible Playbook..."
   sudo ansible-playbook playbook.yml --connection=local
 fi
 
