@@ -30,7 +30,7 @@ shift $((OPTIND-1))
 
 if [ $skipansible = 0 ]; then
 
-  if ! [ -x "command -v ansible" ]; then 
+  if ! command -v ansible;  then 
     echo "Ansible not found installing..."
 
     sudo apt-get update && 
