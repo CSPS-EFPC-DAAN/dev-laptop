@@ -5,7 +5,7 @@
   roles:
     - role: geerlingguy.nodejs
     - role: geerlingguy.docker
-    - role: brentwg.azure-cli
+    - role: huxoll.azure-cliyy
     - role: ngetchell.vscode
     - role: andrewrothstein.terraform
     - role: andrewrothstein.anaconda

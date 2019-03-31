@@ -1,6 +1,6 @@
 ---
   - src: geerlingguy.nodejs
-  - src: brentwg.azure-cli
+  - src: huxoll.azure-cli
   - src: ngetchell.vscode
   - src: geerlingguy.docker
   - src: andrewrothstein.terraform
