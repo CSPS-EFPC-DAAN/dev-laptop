@@ -9,6 +9,7 @@
     - role: ngetchell.vscode
     - role: andrewrothstein.terraform
     - role: andrewrothstein.anaconda
+    - role: pixelart.chrome
   tasks:
     - name: Install Gnome Tweaks fix right-click issue
       apt: 

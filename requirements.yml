@@ -5,3 +5,4 @@
   - src: geerlingguy.docker
   - src: andrewrothstein.terraform
   - src: andrewrothstein.anaconda
+  - src: pixelart.chrome
